@@ -1,7 +1,8 @@
 const NavbarIcon = () => {
   return (
     <svg
-      className='h-6 w-6'
+      height='1.5rem'
+      width='1.5rem'
       fill='none'
       stroke='currentColor'
       viewBox='0 0 24 24'

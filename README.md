@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
@@ -11,3 +12,7 @@ Currently, two official plugins are available:
 # my-store-app
 Create an e-commerce website using Reactjs and Tailwind
 >>>>>>> 4a85caccf1670fc2b980c3d674273fd6f57fe1ad
+=======
+# my-store-app
+Create an e-commerce website using Reactjs and Tailwind
+>>>>>>> 8c49a2902d35b5dab863a7efb863986791952a7b
