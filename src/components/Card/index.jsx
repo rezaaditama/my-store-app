@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 import Button from '../../components/Button';
 
-const Card = ({ image, title, description, price }) => {
+const Card = ({ image, title, description, price, onClick }) => {
   return (
     <div className='mx-auto rounded-md shadow-xl overflow-hidden'>
-      <div className='lg:h-60 h-32'>
+      <div className='lg:h-48 h-32'>
         <img src={image} alt={title} className='w-full h-full' />
       </div>
       <div className='p-3 space-y-1'>
@@ -14,6 +14,7 @@ const Card = ({ image, title, description, price }) => {
         <Button
           className={'bg-blue-600 hover:bg-blue-700 text-white w-full py-2'}
           type={'button'}
+          onClick={onClick}
         >
           Checkout
         </Button>
@@ -26,7 +27,8 @@ Card.propTypes = {
   image: PropTypes.node,
   title: PropTypes.string,
   description: PropTypes.string,
-  price: PropTypes.string,
+  price: PropTypes.node,
+  onClick: PropTypes.func,
 };
 
 export default Card;

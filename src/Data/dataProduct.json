@@ -4,69 +4,69 @@
     "image": "../../public/assets/img/8440.jpg",
     "title": "Blue Converse",
     "description": "Sepatu Sneakers nyaman dengan bahan yang bagus dan nyaman untuk digunakan.",
-    "price": "$100"
+    "price": 1000000
   },
   {
     "id": 2,
     "image": "../../public/assets/img/fashion-shoes-sneakers.jpg",
     "title": "White Converse",
     "description": "Sneakers stylish dengan bahan berkualitas tinggi dan nyaman untuk digunakan sehari-hari.",
-    "price": "$140"
+    "price": 1400000
   },
   {
     "id": 3,
     "image": "../../public/assets/img/2150887410.jpg",
     "title": "Gold Adidas",
     "description": "Sepatu futsal dengan desain menarik dan sol yang memberikan cengkeraman maksimal di lapangan.",
-    "price": "$190"
+    "price": 1900000
   },
   {
     "id": 4,
     "image": "../../public/assets/img/3191.jpg ",
     "title": "Sepatu Sneakers",
     "description": "Sneakers stylish dengan bahan berkualitas tinggi dan nyaman untuk digunakan sehari-hari.",
-    "price": "$140"
+    "price": 1400000
   },
   {
     "id": 5,
     "image": "../../public/assets/img/leather-boots.jpg",
     "title": "Sepatu Boots",
     "description": "Boots yang kokoh dan tahan lama, cocok untuk berbagai kegiatan outdoor.",
-    "price": "$180"
+    "price": 1800000
   },
   {
     "id": 6,
     "image": "../../public/assets/img/brown-leather-slip-men-s-shoes-fashion.jpg",
     "title": "Sepatu Formal",
     "description": "Sepatu formal elegan yang cocok untuk acara-acara resmi dan kantor.",
-    "price": "$110"
+    "price": 1100000
   },
   {
     "id": 7,
     "image": "../../public/assets/img/man-two-background-accessory-velcro.jpg",
     "title": "Sepatu Sandal",
     "description": "Sandal yang nyaman dan ringan untuk dipakai di musim panas atau saat berlibur.",
-    "price": "$200"
+    "price": 2000000
   },
   {
     "id": 8,
     "image": "../../public/assets/img/close-up-diversity-sport-woman-training.jpg",
     "title": "Sepatu Skateboard",
     "description": "Sepatu khusus untuk penggemar skateboarding, dengan desain yang tahan lama.",
-    "price": "$109"
+    "price": 1090000
   },
   {
     "id": 9,
     "image": "../../public/assets/img/clothes-young-childhood-shoe-new.jpg",
     "title": "Sepatu Anak-Anak",
     "description": "Sepatu anak-anak dengan desain lucu dan nyaman untuk dipakai sehari-hari.",
-    "price": "$106"
+    "price": 1060000
   },
   {
     "id": 10,
     "image": "../../public/assets/img/new-sneakers.jpg",
     "title": "Sepatu Sekolah",
     "description": "Sepatu sekolah yang kuat dan tahan lama untuk menemani anak-anak belajar.",
-    "price": "$170"
+    "price": 1700000
   }
 ]

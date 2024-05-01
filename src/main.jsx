@@ -6,6 +6,7 @@ import LoginPage from './pages/LoginPage/index.jsx';
 import RegisterPage from './pages/RegisterPage/index.jsx';
 import ProductPage from './pages/ProductPage';
 import ErrorPage from './pages/ErrorPage';
+import Production from './pages/Production';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -15,6 +16,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path='*' element={<ErrorPage />} />
         <Route path='/register' element={<RegisterPage />} />
         <Route path='/product' element={<ProductPage />} />
+        <Route path='/production' element={<Production />} />
       </Routes>
     </Router>
   </React.StrictMode>
