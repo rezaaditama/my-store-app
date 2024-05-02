@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import Button from '../Button';
 import LogoutIcon from '../../../public/assets/svg/LogoutIcon';
 import NavbarIcon from '../../../public/assets/svg/NavbarIcon';
+import CartIcon from '../../../public/assets/svg/CartIcon';
 
 const Navbar = () => {
   const handlelogout = (e) => {
@@ -37,6 +38,9 @@ const Navbar = () => {
       <div className='md:hidden block'>
         <Button className='text-white focus:outline-none' type='button'>
           <NavbarIcon />
+        </Button>
+        <Button className='text-white focus:outline-none' type='button'>
+          <CartIcon />
         </Button>
       </div>
     </nav>
