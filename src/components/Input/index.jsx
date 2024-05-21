@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
+import { forwardRef } from 'react';
 
-const Input = ({ label, className, id, placeholder, type }) => {
+const Input = forwardRef(({ label, className, id, placeholder, type }, ref) => {
   return (
     <div className={`${className}`}>
       <label htmlFor={id} className='block mr-2 mb-1 font-bold'>
@@ -13,10 +14,11 @@ const Input = ({ label, className, id, placeholder, type }) => {
         className='p-1 rounded border-gray-300 border focus:outline-none focus:border-blue-400 w-full'
         autoComplete={`new-${id}`}
         required
+        ref={ref}
       />
     </div>
   );
-};
+});
 
 Input.propTypes = {
   label: PropTypes.string,
@@ -25,5 +27,7 @@ Input.propTypes = {
   placeholder: PropTypes.string,
   type: PropTypes.string.isRequired,
 };
+
+Input.displayName = 'input';
 
 export default Input;

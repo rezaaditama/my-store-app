@@ -27,20 +27,20 @@ const Items = ({ name, price, qty, total }) => {
   return (
     <tbody className='break-words align-text-top'>
       <tr>
-        <td className='border border-black px-2 py-1'>{name}</td>
+        <td className='border border-black px-2 py-1 line-clamp-2'>{name}</td>
         <td className='border border-black px-2 py-1'>
-          {price.toLocaleString('id-ID', {
+          {price.toLocaleString('en-US', {
             style: 'currency',
-            currency: 'IDR',
+            currency: 'USD',
             minimumFractionDigits: 0,
             maximumFractionDigits: 0,
           })}
         </td>
         <td className='border border-black py-1 text-center'>{qty}</td>
         <td className='border border-black px-2 py-1'>
-          {total.toLocaleString('id-ID', {
+          {total.toLocaleString('en-US', {
             style: 'currency',
-            currency: 'IDR',
+            currency: 'USD',
             minimumFractionDigits: 0,
             maximumFractionDigits: 0,
           })}
@@ -48,6 +48,23 @@ const Items = ({ name, price, qty, total }) => {
       </tr>
     </tbody>
   );
+};
+
+const Footer = ({ totalPrice }) => {
+  return (
+    <tfoot>
+      <tr className='font-bold'>
+        <td className='border border-black text-center px-2 py-1' colSpan={3}>
+          Total
+        </td>
+        <td className='border border-black px-2 py-1'>{totalPrice}</td>
+      </tr>
+    </tfoot>
+  );
+};
+
+Footer.propTypes = {
+  totalPrice: PropTypes.node,
 };
 
 Cart.propTypes = {
@@ -62,5 +79,6 @@ Items.propTypes = {
 };
 
 Cart.Items = Items;
+Cart.Footer = Footer;
 
 export default Cart;

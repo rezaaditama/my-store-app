@@ -5,7 +5,7 @@ const Card = ({ image, title, description, price, onClick }) => {
   return (
     <div className='mx-auto rounded-md shadow-xl overflow-hidden'>
       <div className='lg:h-48 h-32'>
-        <img src={image} alt={title} className='w-full h-full' />
+        <img src={image} alt={title} className=' p-4 w-full h-full' />
       </div>
       <div className='p-3 space-y-1'>
         <h1 className='font-semibold line-clamp-1  text-center'>{title}</h1>

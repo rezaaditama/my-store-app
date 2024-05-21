@@ -1,11 +1,36 @@
 import Card from '../../components/Card';
-import Product from '../../Data/dataProduct.json';
 import Navbar from '../../components/navbar';
 import Cart from '../../components/Cart';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { getProducts } from '../../services/ProductDB/ProductServices';
 
 const ProductPage = () => {
   const [cart, setCart] = useState([]);
+  const [totalPrice, setTotalPrice] = useState(0);
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    getProducts((data) => {
+      setProducts(data);
+    });
+  }, []);
+
+  useEffect(() => {
+    const cartItems = localStorage.getItem('product');
+    cartItems ? setCart(JSON.parse(cartItems)) : [];
+  }, []);
+
+  useEffect(() => {
+    if (products.length > 0) {
+      const sumPrice = cart.reduce((acc, item) => {
+        const selectedProduct = products.find(
+          (product) => product.id === item.id
+        );
+        return acc + selectedProduct.price * item.qty;
+      }, 0);
+      setTotalPrice(sumPrice);
+    }
+  }, [cart, products]);
 
   const handleProduct = (product) => {
     const existingProduct = cart.find((item) => item.id === product.id);
@@ -15,14 +40,18 @@ const ProductPage = () => {
         product.id === item.id ? { ...item, qty: item.qty + 1 } : item
       );
       setCart(updatedProducts);
+      localStorage.setItem('product', JSON.stringify(updatedProducts));
     } else {
-      setCart([
+      const updatedProducts = [
         ...cart,
         {
           id: product.id,
           qty: 1,
         },
-      ]);
+      ];
+
+      setCart(updatedProducts);
+      localStorage.setItem('product', JSON.stringify(updatedProducts));
     }
   };
 
@@ -31,16 +60,16 @@ const ProductPage = () => {
       <Navbar />
       <div className='flex pt-16'>
         <div className='flex flex-wrap lg:w-2/3 w-full justify-start p-5'>
-          {Product.map((product) => {
+          {products.map((product) => {
             return (
               <div className='w-1/2 lg:w-1/4 mt-5' key={product.id}>
                 <Card
                   image={product.image}
                   title={product.title}
                   description={product.description}
-                  price={product.price.toLocaleString('id-ID', {
+                  price={product.price.toLocaleString('en-US', {
                     style: 'currency',
-                    currency: 'IDR',
+                    currency: 'USD',
                     minimumFractionDigits: 0,
                     maximumFractionDigits: 0,
                   })}
@@ -53,7 +82,7 @@ const ProductPage = () => {
         <div className='w-1/3 hidden lg:block'>
           <Cart>
             {cart.map((item, index) => {
-              const cartProduct = Product.find(
+              const cartProduct = products.find(
                 (product) => item.id === product.id
               );
 
@@ -67,6 +96,16 @@ const ProductPage = () => {
                 />
               ) : null;
             })}
+            {products.length > 0 && (
+              <Cart.Footer
+                totalPrice={totalPrice.toLocaleString('en-US', {
+                  style: 'currency',
+                  currency: 'USD',
+                  minimumFractionDigits: 0,
+                  maximumFractionDigits: 0,
+                })}
+              />
+            )}
           </Cart>
         </div>
       </div>

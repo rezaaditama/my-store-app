@@ -2,6 +2,7 @@ import Form from '../../components/Form';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 import AuthRedirect from '../../components/AuthRedirect';
+import { useEffect, useRef } from 'react';
 
 const LoginPage = () => {
   const handleLogin = (e) => {
@@ -10,6 +11,12 @@ const LoginPage = () => {
     localStorage.setItem('password', e.target.password.value);
     window.location.href = '/product';
   };
+
+  const inputUsername = useRef(null);
+  useEffect(() => {
+    inputUsername.current.focus();
+  }, []);
+
   return (
     <div className='flex justify-center items-center min-h-screen'>
       <Form className={'space-y-4'} onSubmit={handleLogin}>
@@ -19,6 +26,7 @@ const LoginPage = () => {
           id={'username'}
           placeholder='Masukkan Username'
           type={'text'}
+          ref={inputUsername}
         />
         <Input
           label={'Password'}
