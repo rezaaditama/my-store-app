@@ -10,6 +10,14 @@ const ProductPage = () => {
   const [totalPrice, setTotalPrice] = useState(0);
   const [products, setProducts] = useState([]);
 
+  //Memeriksa Token
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      window.location.href = '/';
+    }
+  }, []);
+
   //Fetching data API
   useEffect(() => {
     const fetchProducts = async () => {

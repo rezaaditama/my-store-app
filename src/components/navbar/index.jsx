@@ -3,18 +3,30 @@ import Button from '../Button';
 import LogoutIcon from '../../../public/assets/svg/LogoutIcon';
 import NavbarIcon from '../../../public/assets/svg/NavbarIcon';
 import CartIcon from '../../../public/assets/svg/CartIcon';
+import { useEffect, useState } from 'react';
+import { getUsername } from '../../services/AuthtDB/UserService';
 
 const Navbar = () => {
+  //Membuat State
+  const [username, setUsername] = useState('');
+
+  //Handle Logout
   const handlelogout = (e) => {
     e.preventDefault();
+    localStorage.removeItem('token');
     window.location.href = '/';
-    localStorage.removeItem('username');
-    localStorage.removeItem('password');
   };
+
+  //Get Username from token
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    setUsername(getUsername(token));
+  }, []);
+
   return (
     <nav className='bg-gray-800 flex py-4 justify-between px-4 lg:px-20 fixed w-full'>
       <div className='font-bold text-white text-xl'>
-        <h1>{localStorage.getItem('username')}</h1>
+        <h1 className='capitalize'>{username}</h1>
       </div>
       <div className='flex flex-wrap space-x-4'>
         <div className='space-x-4 font-semibold text-white hidden md:block'>
