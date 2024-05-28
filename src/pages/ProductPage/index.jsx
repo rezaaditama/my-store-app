@@ -5,21 +5,27 @@ import { useState, useEffect } from 'react';
 import { getProducts } from '../../services/ProductDB/ProductServices';
 
 const ProductPage = () => {
+  //Membuat state
   const [cart, setCart] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
   const [products, setProducts] = useState([]);
 
+  //Fetching data API
   useEffect(() => {
-    getProducts((data) => {
+    const fetchProducts = async () => {
+      const data = await getProducts();
       setProducts(data);
-    });
+    };
+    fetchProducts();
   }, []);
 
+  //Load Cart
   useEffect(() => {
     const cartItems = localStorage.getItem('product');
     cartItems ? setCart(JSON.parse(cartItems)) : [];
   }, []);
 
+  //Membuat total pada cart
   useEffect(() => {
     if (products.length > 0) {
       const sumPrice = cart.reduce((acc, item) => {
@@ -32,6 +38,7 @@ const ProductPage = () => {
     }
   }, [cart, products]);
 
+  //Handle add to cart
   const handleProduct = (product) => {
     const existingProduct = cart.find((item) => item.id === product.id);
 
