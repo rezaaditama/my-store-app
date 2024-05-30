@@ -7,6 +7,7 @@ import RegisterPage from './pages/RegisterPage/index.jsx';
 import ProductPage from './pages/ProductPage';
 import ErrorPage from './pages/ErrorPage';
 import Production from './pages/Production';
+import AboutPage from './pages/AboutPage';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -17,6 +18,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path='/register' element={<RegisterPage />} />
         <Route path='/product' element={<ProductPage />} />
         <Route path='/production' element={<Production />} />
+        <Route path='/about' element={<AboutPage />} />
       </Routes>
     </Router>
   </React.StrictMode>

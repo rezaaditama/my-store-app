@@ -1,5 +1,5 @@
 import Card from '../../components/Card';
-import Navbar from '../../components/navbar';
+import Navbar from '../../components/Navbar';
 import Cart from '../../components/Cart';
 import { useState, useEffect } from 'react';
 import { getProducts } from '../../services/ProductDB/ProductServices';
