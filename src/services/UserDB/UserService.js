@@ -19,3 +19,14 @@ export const getUsername = (token) => {
   const decoded = jwtDecode(token);
   return decoded.user;
 };
+
+//Mengambil semua data user
+export const getDataUser = async () => {
+  try {
+    const response = await axios.get('https://fakestoreapi.com/users');
+    return response.data;
+  } catch (error) {
+    console.log(`error : ${error}`);
+    return [];
+  }
+};

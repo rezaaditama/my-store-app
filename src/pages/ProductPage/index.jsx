@@ -3,6 +3,7 @@ import Navbar from '../../components/Navbar';
 import Cart from '../../components/Cart';
 import { useState, useEffect } from 'react';
 import { getProducts } from '../../services/ProductDB/ProductServices';
+import { useAuth } from '../../hooks/useAuth';
 
 const ProductPage = () => {
   //Membuat state
@@ -10,13 +11,8 @@ const ProductPage = () => {
   const [totalPrice, setTotalPrice] = useState(0);
   const [products, setProducts] = useState([]);
 
-  //Memeriksa Token
-  useEffect(() => {
-    const token = localStorage.getItem('token');
-    if (!token) {
-      window.location.href = '/';
-    }
-  }, []);
+  //Memeriksa Token menggunakan custom hooks
+  const isAuthenticated = useAuth();
 
   //Fetching data API
   useEffect(() => {
@@ -70,6 +66,10 @@ const ProductPage = () => {
     }
   };
 
+  //Jika tidak ada token maka kembalikan null
+  if (!isAuthenticated) {
+    return null;
+  }
   return (
     <>
       <Navbar />

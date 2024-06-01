@@ -3,13 +3,9 @@ import Button from '../Button';
 import LogoutIcon from '../../../public/assets/svg/LogoutIcon';
 import NavbarIcon from '../../../public/assets/svg/NavbarIcon';
 import CartIcon from '../../../public/assets/svg/CartIcon';
-import { useEffect, useState } from 'react';
-import { getUsername } from '../../services/AuthtDB/UserService';
+import { useUsername } from '../../hooks/useUsername';
 
 const Navbar = () => {
-  //Membuat State
-  const [username, setUsername] = useState('');
-
   //Handle Logout
   const handlelogout = (e) => {
     e.preventDefault();
@@ -18,10 +14,7 @@ const Navbar = () => {
   };
 
   //Get Username from token
-  useEffect(() => {
-    const token = localStorage.getItem('token');
-    setUsername(getUsername(token));
-  }, []);
+  const username = useUsername();
 
   return (
     <nav className='bg-gray-800 flex py-4 justify-between px-4 lg:px-20 fixed w-full'>
@@ -30,8 +23,8 @@ const Navbar = () => {
       </div>
       <div className='flex flex-wrap space-x-4'>
         <div className='space-x-4 font-semibold text-white hidden md:block'>
-          <Link to='#'>Home</Link>
-          <Link to='#'>About</Link>
+          <Link to='/product'>Home</Link>
+          <Link to='/about'>About</Link>
           <Link to='#'>Services</Link>
           <Link to='#'>Contact</Link>
         </div>

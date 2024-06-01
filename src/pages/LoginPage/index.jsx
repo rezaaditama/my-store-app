@@ -3,7 +3,7 @@ import Input from '../../components/Input';
 import Button from '../../components/Button';
 import AuthRedirect from '../../components/AuthRedirect';
 import { useEffect, useRef, useState } from 'react';
-import { getUserLogin } from '../../services/AuthtDB/UserService';
+import { getUserLogin } from '../../services/UserDB/UserService';
 
 const LoginPage = () => {
   //Membuat state
