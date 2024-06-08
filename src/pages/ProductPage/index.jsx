@@ -81,7 +81,11 @@ const ProductPage = () => {
               return (
                 <div className='w-1/2 lg:w-1/4 mt-5' key={product.id}>
                   <Card>
-                    <Card.Header image={product.image} title={product.title} />
+                    <Card.Header
+                      image={product.image}
+                      title={product.title}
+                      className={'lg:h-48 h-32'}
+                    />
                     <Card.Description
                       description={product.description}
                       price={product.price.toLocaleString('en-US', {

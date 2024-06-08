@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 const Cart = ({ children }) => {
   return (
     <div className='w-full px-3'>
-      <div className=' text-center py-3 bg-slate-800'>
+      <div className='text-center py-3 bg-slate-800'>
         <h1 className='font-bold text-white'>Cart</h1>
       </div>
       <div>

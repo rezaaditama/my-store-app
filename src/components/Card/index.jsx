@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 const Card = ({ children }) => {
   return (
-    <div className='mx-auto rounded-md shadow-xl overflow-hidden'>
+    <div className='mx-auto rounded-md shadow-xl overflow-hidden h-full w-full'>
       {children}
     </div>
   );
@@ -11,9 +11,7 @@ const Card = ({ children }) => {
 const Header = ({ image, title, className }) => {
   return (
     <div className={className}>
-      <div className='lg:h-48 h-32'>
-        <img src={image} alt={title} className=' p-4 w-full h-full' />
-      </div>
+      <img src={image} alt={title} className=' p-4 w-full h-full' />
     </div>
   );
 };
