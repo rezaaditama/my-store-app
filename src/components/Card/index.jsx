@@ -11,7 +11,7 @@ const Card = ({ children }) => {
 const Header = ({ image, title, className }) => {
   return (
     <div className={className}>
-      <img src={image} alt={title} className=' p-4 w-full h-full' />
+      <img src={image} alt={title} className='p-4 w-full h-full' />
     </div>
   );
 };
@@ -19,8 +19,10 @@ const Header = ({ image, title, className }) => {
 const Description = ({ title, description, price, children }) => {
   return (
     <div className='p-3 space-y-1'>
-      <h1 className='font-semibold line-clamp-1  text-center'>{title}</h1>
-      <p className='text-gray-700 line-clamp-3 font-normal'>{description}</p>
+      <h1 className='font-semibold line-clamp-1 text-center'>{title}</h1>
+      <p className='text-justify text-gray-700 line-clamp-3 text-sm'>
+        {description}
+      </p>
       <h2 className='text-center font-semibold'>{price}</h2>
       {children}
     </div>

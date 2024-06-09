@@ -1,29 +1,25 @@
 import Navbar from '../../components/Navbar';
-import Card from '../../components/Card';
 import CartActions from '../../components/CartActions';
+import Card from '../../components/Card';
 
 const DetailProduct = () => {
   return (
-    <div className=''>
+    <>
       <Navbar />
-      <div className='flex pt-16'>
-        <div className='w-1/3'>
+      <div className='flex justify-evenly items-center  pt-16 py-5'>
+        <div className='w-2/5 shadow-2xl'>
           <Card>
             <Card.Header
-              image={'../../../public/assets/img/8440.jpg'}
-              className={''}
+              image={'../../../public/assets/img/3191.jpg'}
+              className={'p-10'}
             />
-            <Card.Description title={'halo'} />
           </Card>
         </div>
-        <div className='w-1/3'>
-          <p>Hello</p>
-        </div>
-        <div className='w-1/3'>
-          <CartActions></CartActions>
+        <div className='w-1/2 items-center px-5'>
+          <CartActions className={'h-1/2'} />
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

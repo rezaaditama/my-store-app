@@ -87,6 +87,7 @@ const ProductPage = () => {
                       className={'lg:h-48 h-32'}
                     />
                     <Card.Description
+                      title={product.title}
                       description={product.description}
                       price={product.price.toLocaleString('en-US', {
                         style: 'currency',
